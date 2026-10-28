@@ -1,0 +1,11 @@
+const router = require("express").Router();
+const asyncHandler = require("../utils/asyncHandler");
+const { requireAuth } = require("../middleware/auth.middleware");
+const controller = require("../controllers/document.controller");
+router.use(requireAuth);
+router.route("/").post(asyncHandler(controller.createDocument)).get(asyncHandler(controller.listDocuments));
+router.get("/:id/revisions", asyncHandler(controller.listRevisions));
+router.post("/:id/share", asyncHandler(controller.shareDocument));
+router.delete("/:id/share/:userId", asyncHandler(controller.removeCollaborator));
+router.route("/:id").get(asyncHandler(controller.getOne)).patch(asyncHandler(controller.updateMetadata)).delete(asyncHandler(controller.deleteDocument));
+module.exports = router;
