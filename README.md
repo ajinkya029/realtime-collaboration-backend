@@ -115,7 +115,7 @@ Install the following before running the project:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/realtime-collaboration-backend.git
+git clone https://github.com/ajinkya029/realtime-collaboration-backend.git
 cd realtime-collaboration-backend
 ```
 
